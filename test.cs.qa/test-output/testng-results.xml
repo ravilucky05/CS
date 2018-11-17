@@ -1,21 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7933" started-at="2018-11-15T10:14:02Z" finished-at="2018-11-15T10:14:10Z">
+  <suite name="Default suite" duration-ms="11862" started-at="2018-11-17T15:00:42Z" finished-at="2018-11-17T15:00:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7933" started-at="2018-11-15T10:14:02Z" finished-at="2018-11-15T10:14:10Z">
+    <test name="Default test" duration-ms="11862" started-at="2018-11-17T15:00:42Z" finished-at="2018-11-17T15:00:54Z">
       <class name="com.cs.qa.tests.SignUpPageTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.cs.qa.tests.SignUpPageTests@6a4f787b]" name="setUp" is-config="true" duration-ms="18282" started-at="2018-11-15T10:13:43Z" finished-at="2018-11-15T10:14:02Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.cs.qa.tests.SignUpPageTests@6a4f787b]" name="setUp" is-config="true" duration-ms="14549" started-at="2018-11-17T15:00:27Z" finished-at="2018-11-17T15:00:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test()[pri:0, instance:com.cs.qa.tests.SignUpPageTests@6a4f787b]" name="test" duration-ms="7815" started-at="2018-11-15T10:14:02Z" finished-at="2018-11-15T10:14:10Z">
+        <test-method status="PASS" signature="test_invalid_uname()[pri:1, instance:com.cs.qa.tests.SignUpPageTests@6a4f787b]" name="test_invalid_uname" duration-ms="5864" started-at="2018-11-17T15:00:42Z" finished-at="2018-11-17T15:00:48Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method status="PASS" signature="TearDown()[pri:0, instance:com.cs.qa.tests.SignUpPageTests@6a4f787b]" name="TearDown" is-config="true" duration-ms="1072" started-at="2018-11-15T10:14:10Z" finished-at="2018-11-15T10:14:11Z">
+        </test-method> <!-- test_invalid_uname -->
+        <test-method status="FAIL" signature="test_invalid_email()[pri:2, instance:com.cs.qa.tests.SignUpPageTests@6a4f787b]" name="test_invalid_email" duration-ms="5913" started-at="2018-11-17T15:00:48Z" finished-at="2018-11-17T15:00:54Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Email is invalid or already taken] but found [Username is already taken]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Email is invalid or already taken] but found [Username is already taken]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:453)
+at org.testng.Assert.assertEquals(Assert.java:463)
+at com.cs.qa.tests.SignUpPageTests.test_invalid_email(SignUpPageTests.java:51)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_invalid_email -->
+        <test-method status="PASS" signature="TearDown()[pri:0, instance:com.cs.qa.tests.SignUpPageTests@6a4f787b]" name="TearDown" is-config="true" duration-ms="1502" started-at="2018-11-17T15:00:54Z" finished-at="2018-11-17T15:00:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
