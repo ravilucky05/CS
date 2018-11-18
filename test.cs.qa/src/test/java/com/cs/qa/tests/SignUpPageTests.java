@@ -48,7 +48,30 @@ public class SignUpPageTests extends TestBase {
 	public void test_invalid_email() throws InterruptedException {
 
 		List Uerror = signupPage.pageValidation("test@test.com", "");
-		Assert.assertEquals(((WebElement) Uerror.get(0)).getText(), "Email is invalid or already taken");
+		Assert.assertEquals(((WebElement) Uerror.get(1)).getText(), "Email is invalid or already taken");
+	}
+
+	@Test(priority = 3)
+	public void test_invalid_email_username() throws InterruptedException {
+
+		List Uerror = signupPage.pageValidation("test@test.com", "test");
+		Assert.assertEquals(2, Uerror.size());
+	}
+
+	@Test(priority = 4)
+	public void test_invalid_password() throws InterruptedException {
+
+		List Uerror = signupPage.SignUp_password("test", "test", "12345678");
+		Assert.assertEquals(((WebElement) Uerror.get(2)).getText(),
+				"Password needs at least 1 lowercase letter and has been compromised in a third party data breach");
+	}
+
+	@Test(priority = 5)
+	public void test_invalid_password_1() throws InterruptedException {
+
+		List Uerror = signupPage.SignUp_password("test", "test", "123456");
+		Assert.assertEquals(((WebElement) Uerror.get(2)).getText(),
+				"Password needs at least 1 lowercase letter and has been compromised in a third party data breach");
 	}
 
 	@AfterSuite
