@@ -3,6 +3,7 @@ package com.cs.qa.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -13,13 +14,13 @@ import com.cs.qa.base.TestBase;
 
 public class SignUpPage extends TestBase {
 
-	@FindBy(id = "user[login]")
+	@FindBy(name = "user[login]")
 	WebElement userName;
 
-	@FindBy(id = "user[email]")
+	@FindBy(name = "user[email]")
 	WebElement email;
 
-	@FindBy(id = "user[password]")
+	@FindBy(name = "user[password]")
 	WebElement password;
 
 	@FindBy(xpath = "//button[contains(text(),'Sign up for GitHub')]")
@@ -77,14 +78,25 @@ public class SignUpPage extends TestBase {
 
 	public List<WebElement> SignUp_password(String fMail, String fUname, String fPassword) throws InterruptedException {
 
+		driver.get("https://github.com/");
+		userName.clear();
 		userName.sendKeys(fUname);
+		email.clear();
 		email.sendKeys(fMail);
+		password.clear();
 		password.sendKeys(fPassword);
 
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
 		signupButton.click();
-		Thread.sleep(2000);
-		String Error = mainError.getText();
+		// js.executeScript("arguments[0].scrollIntoView();", password);
+
+		js.executeScript("window.scrollBy(0,500)");
+
+		// String Error = mainError.getText();
 		List<WebElement> erros = driver.findElements(By.xpath("//dd[contains(@class,'error')]"));
+		Thread.sleep(2000);
+		// driver.navigate().back();
 		return erros;
 
 	}

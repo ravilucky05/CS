@@ -52,6 +52,14 @@ public class SignUpPageTests extends TestBase {
 	}
 
 	@Test(priority = 3)
+	public void test_invalid_user_1() throws InterruptedException {
+
+		List Uerror = signupPage.pageValidation("", "test!");
+		Assert.assertEquals(((WebElement) Uerror.get(1)).getText(),
+				"Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen");
+	}
+
+	@Test(priority = 3)
 	public void test_invalid_email_username() throws InterruptedException {
 
 		List Uerror = signupPage.pageValidation("test@test.com", "test");
@@ -71,7 +79,7 @@ public class SignUpPageTests extends TestBase {
 
 		List Uerror = signupPage.SignUp_password("test", "test", "123456");
 		Assert.assertEquals(((WebElement) Uerror.get(2)).getText(),
-				"Password needs at least 1 lowercase letter and has been compromised in a third party data breach");
+				"Password is too short (minimum is 8 characters), needs at least 1 lowercase letter, and has been compromised in a third party data breach");
 	}
 
 	@AfterSuite

@@ -6,8 +6,7 @@
       <class name="com.cs.qa.tests.SignUpPageTests">
         <methods>
           <include name="setUp"/>
-          <include name="test_invalid_password_1"/>
-          <include name="test_invalid_password"/>
+          <include name="test_invalid_user_1"/>
           <include name="TearDown"/>
         </methods>
       </class> <!-- com.cs.qa.tests.SignUpPageTests -->
