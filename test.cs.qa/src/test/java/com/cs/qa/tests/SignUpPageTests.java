@@ -54,9 +54,8 @@ public class SignUpPageTests extends TestBase {
 	@Test(priority = 3)
 	public void test_invalid_user_1() throws InterruptedException {
 
-		List Uerror = signupPage.pageValidation("", "test!");
-		Assert.assertEquals(((WebElement) Uerror.get(1)).getText(),
-				"Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen");
+		signupPage.userValidation();
+		// Assert.assertEquals(0, Uerror.size());
 	}
 
 	@Test(priority = 3)

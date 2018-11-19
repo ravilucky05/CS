@@ -101,4 +101,36 @@ public class SignUpPage extends TestBase {
 
 	}
 
+	public void userValidation() {
+
+		userName.clear();
+		String s = "!@#$%^&*()";
+		List results = null;
+		String Error = "Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen";
+		for (int i = 0; i < s.length(); i++) {
+			String u = s.charAt(i) + "test";
+			userName.clear();
+			userName.sendKeys(u);
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			WebDriverWait wait = new WebDriverWait(driver, 3000);
+			wait.until(ExpectedConditions.visibilityOf(erros));
+			List<WebElement> erros = driver.findElements(By.xpath("//dd[contains(@class,'error')]"));
+
+			String UE = erros.get(0).getText();
+
+			if (!Error.equals(UE)) {
+
+				System.out.println("acceoted specual charter");
+
+			}
+
+		}
+
+	}
+
 }
